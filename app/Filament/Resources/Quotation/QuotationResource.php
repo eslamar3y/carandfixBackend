@@ -84,7 +84,7 @@ class QuotationResource extends Resource
                 ])
                 ->columns(5)
                 ->addActionLabel(__('Add Item')),
-            TextInput::make('sub_total')->label('Sub Total'),
+            TextInput::make('sub_total')->label('Sub Total')->required(),
 
 
         ]);
@@ -253,11 +253,9 @@ class QuotationResource extends Resource
         $dir = $forPdf ? 'ltr' : 'rtl';
         $footerStyle = $forPdf ? 'position:fixed;bottom:0;left:0;right:0;width:100%' : 'width:100%;margin-top:30px';
 
-        $arPhone = $s('الجوال:');
         $arAddress = $s('الدوحة - المنطقة 26');
         $arStreet = $s('شارع 940 - النجمة');
         $arOffice = $s('مكتب 201');
-        $arEmail = $s('البريد الإلكتروني:');
         $arCustomer = $s('اسم العميل');
         $arRefNo = $s('الرقم المرجعي');
         $arDate = $s('تاريخ');
@@ -277,13 +275,11 @@ class QuotationResource extends Resource
         $arTotal = $s('الإجمالي');
 
         if ($forPdf) {
-            $contactPhone = '+97477000451 ' . $arPhone;
-            $contactEmail = 'info@clickandfixqa.com ' . $arEmail;
-            $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice . '<br>' . $contactEmail;
+            $contactPhone = '+97477000451';
+            $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice;
         } else {
-            $contactPhone = $arPhone . ' +97477000451';
-            $contactEmail = $arEmail . ' info@clickandfixqa.com';
-            $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice . '<br>' . $contactEmail;
+            $contactPhone = '+97477000451';
+            $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice;
         }
 
         $items = $get('items') ?? [];
@@ -300,12 +296,12 @@ class QuotationResource extends Resource
             $description = $s(e($desc));
 
             $itemsRows .= '<tr>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . $slNo . '</td>
-                <td style="text-align:center;padding:4px 6px;border:1px solid #000;font-size:10px">' . $description . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . e($unit) . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . $qty . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . number_format($unitPrice, 2) . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . number_format($amount, 2) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . $slNo . '</td>
+                <td style="text-align:center;padding:6px 8px;border:1px solid #000;font-size:12px">' . $description . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . e($unit) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . $qty . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . number_format($unitPrice, 2) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . number_format($amount, 2) . '</td>
             </tr>';
             $slNo++;
         }
@@ -320,8 +316,8 @@ class QuotationResource extends Resource
             body { font-family: "DejaVu Sans", sans-serif; font-size: 11px; color: #000; margin: 0; padding: 0 0 100px 0; }
             table { border-collapse: collapse; width: 100%; }
             .bordered { border: 1px solid #000; }
-            .bordered td, .bordered th { border: 1px solid #000; padding: 4px 6px; font-size: 10px; }
-            .header-table td { vertical-align: top; padding: 2px 4px; font-size: 10px; }
+            .bordered td, .bordered th { border: 1px solid #000; padding: 4px 6px; font-size: 12px; }
+            .header-table td { vertical-align: top; padding: 2px 4px; font-size: 12px; }
             .contact-left { text-align: left; direction: ltr; }
             .center { text-align: center; }
             .bold { font-weight: bold; }
@@ -334,71 +330,71 @@ class QuotationResource extends Resource
         <!-- HEADER -->
         <table class="header-table" style="width:100%;margin-bottom:8px;direction:ltr">
             <tr>
-                <td class="contact-left" style="width:30%">
-                    <b>Phone:</b> +97477000451<br>
-                    <b>AlDoha - Area 26</b><br>
-                    <b>Str 940 - Najma</b><br>
-                    <b>Office 201</b><br>
-                    <b>Email:</b> Info@clickandfixqa.com
+                <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
+                    +97477000451<br>
+                    AlDoha - Area 26<br>
+                    Str 940 - Najma<br>
+                    Office 201<br>
+                    Info@clickandfixqa.com
                 </td>
                 <td class="center" style="width:40%;direction:ltr">'
                     . ($logo ? '<img src="' . $logo . '" style="max-height:100px;width:auto;display:block;margin:0 auto" alt="Logo"><br>' : '')
-                    . '<div style="font-size:10px">' . $s('كليك اند فيكس للسيارات') . '</div>
+                    . '<div style="font-size:10px;font-weight:bold">' . $s('كليك اند فيكس للسيارات') . '</div>
                     <div style="font-size:14px;font-weight:bold">Click and Fix</div>
                     <div style="font-size:16px;font-weight:bold;margin-top:4px">Quotation</div>
                 </td>
-                <td style="width:30%;vertical-align:top;padding:10px;font-size:10px;text-align:right">
-                    <div style="direction:rtl;unicode-bidi:embed">' . $headingRight . '</div>
+                <td style="width:30%;vertical-align:top;padding:10px;font-size:14px;font-weight:bold;text-align:right">
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $headingRight . '</div>
                 </td>
             </tr>
         </table>
 
         <!-- CUSTOMER INFO TABLE -->
-        <table class="bordered" style="margin-bottom:8px">
+        <table class="bordered" style="margin-bottom:8px;font-size:12px">
             <tr>
-                <td rowspan="2" style="width:15%;padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">To </td>
-                <td rowspan="2" style="width:35%;padding:4px;border:1px solid #000;font-size:10px">' . $s(e($customerName)) . '</td>
-                <td style="width:15%;padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Ref No </td>
-                <td style="width:35%;padding:4px;border:1px solid #000;font-size:10px">' . e($refNo) . '</td>
+                <td rowspan="2" style="width:15%;padding:4px;border:1px solid #000;font-weight:bold">To </td>
+                <td rowspan="2" style="width:35%;padding:4px;border:1px solid #000">' . $s(e($customerName)) . '</td>
+                <td style="width:15%;padding:4px;border:1px solid #000;font-weight:bold">Ref No </td>
+                <td style="width:35%;padding:4px;border:1px solid #000">' . e($refNo) . '</td>
             </tr>
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Date</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . e($date) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Date</td>
+                <td style="padding:4px;border:1px solid #000">' . e($date) . '</td>
             </tr>
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Attn </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . $s(e($attn)) . '</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">From </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . $s(e($fromPerson)) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Attn </td>
+                <td style="padding:4px;border:1px solid #000">' . $s(e($attn)) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">From </td>
+                <td style="padding:4px;border:1px solid #000">' . $s(e($fromPerson)) . '</td>
             </tr>
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Title </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . e($title) . '</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Fax </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . e($fax) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Title </td>
+                <td style="padding:4px;border:1px solid #000">' . e($title) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Fax </td>
+                <td style="padding:4px;border:1px solid #000">' . e($fax) . '</td>
             </tr>
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Your Ref </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . $s(e($yourRef)) . '</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold">Subject </td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px">' . $s(e($subject)) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Your Ref </td>
+                <td style="padding:4px;border:1px solid #000">' . $s(e($yourRef)) . '</td>
+                <td style="padding:4px;border:1px solid #000;font-weight:bold">Subject </td>
+                <td style="padding:4px;border:1px solid #000">' . $s(e($subject)) . '</td>
             </tr>
         </table>
 
         <!-- OPENING -->
-        <p style="font-size:10px;margin:6px 0">Dear Sir,</p>
-        <p style="font-size:10px;margin:6px 0">We have a pleasure in submitting our offer for you as follows</p>
+        <p style="font-size:12px;margin:6px 0">Dear Sir,</p>
+        <p style="font-size:12px;margin:6px 0">We have a pleasure in submitting our offer for you as follows</p>
 
         <!-- ITEMS TABLE -->
         <table class="bordered" style="margin-bottom:8px">
             <thead>
                 <tr>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arSlNo . '<br>Sl No.</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arDescription . '<br>DISCRIPTION</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arUnit . '<br>Unit</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arQty . '<br>Qty</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arUnitPrice . '<br>Unit Price Qrs.</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">' . $arAmount . '<br>Amount Qrs.</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arSlNo . '<br>Sl No.</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arDescription . '<br>DISCRIPTION</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arUnit . '<br>Unit</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arQty . '<br>Qty</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arUnitPrice . '<br>Unit Price Qrs.</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">' . $arAmount . '<br>Amount Qrs.</th>
                 </tr>
             </thead>
             <tbody>
@@ -407,14 +403,14 @@ class QuotationResource extends Resource
         </table>
 
         <!-- TOTALS -->
-        <table style="width:50%;float:right;margin-bottom:8px">
+        <table style="width:100%;margin-bottom:8px;font-size:12px">
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold;text-align:center">Sub Total / ' . $arSubTotal . '</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;text-align:center">' . e($subTotal) . '</td>
+                <td style="width:50%;padding:4px;border:1px solid #000;font-weight:bold;text-align:center">Sub Total / ' . $arSubTotal . '</td>
+                <td style="width:50%;padding:4px;border:1px solid #000;text-align:center">' . e($subTotal) . '</td>
             </tr>
             <tr>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;font-weight:bold;text-align:center">Total QAR / ' . $s('الريال القطري') . '</td>
-                <td style="padding:4px;border:1px solid #000;font-size:10px;text-align:center"><b>' . e($totalWords) . '</b></td>
+                <td style="width:50%;padding:4px;border:1px solid #000;font-weight:bold;text-align:center">Total QAR / ' . $s('الريال القطري') . '</td>
+                <td style="width:50%;padding:4px;border:1px solid #000;text-align:center"><b>' . e($totalWords) . '</b></td>
             </tr>
         </table>
 
@@ -424,28 +420,28 @@ class QuotationResource extends Resource
         <div style="' . $footerStyle . '">
         <table style="width:100%;margin:0 auto;padding:4px 10px">
             <tr>
-                <td style="width:33%;vertical-align:top;font-size:10px;text-align:center;padding:4px">
+                <td style="width:33%;vertical-align:top;font-size:12px;text-align:center;padding:4px">
                     <b>Validity</b>
                 </td>
-                <td style="width:33%;vertical-align:top;font-size:10px;text-align:center;padding:4px">
+                <td style="width:33%;vertical-align:top;font-size:12px;text-align:center;padding:4px">
                     <b>Upon Request</b>
                 </td>
-                <td style="width:34%;vertical-align:top;font-size:10px;text-align:center;padding:4px">
+                <td style="width:34%;vertical-align:top;font-size:12px;text-align:center;padding:4px">
                     <b>Terms & Conditions</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="3" style="text-align:left;font-size:10px;padding:4px">
+                <td colspan="3" style="text-align:left;font-size:12px;padding:4px">
                     <b>Delivery:</b> ' . e($delivery) . '
                 </td>
             </tr>
         </table>
         <table style="width:100%;margin:0 auto;padding:4px 10px">
             <tr>
-                <td style="width:75%;vertical-align:top;font-size:9px;text-align:left;padding:2px;direction:ltr">
-                    <span style="font-size:9px">' . e($footerNote ?: 'Hope our rates are acceptable to you and awaiting your valued order. Please feel to contact us on +97477000451 for any information of your interest.') . '</span>
+                <td style="width:75%;vertical-align:top;font-size:11px;text-align:left;padding:2px;direction:ltr">
+                    <span style="font-size:11px">' . e($footerNote ?: 'Hope our rates are acceptable to you and awaiting your valued order. Please feel to contact us on +97477000451 for any information of your interest.') . '</span>
                 </td>
-                <td style="width:25%;vertical-align:top;text-align:right;font-size:9px;padding:2px">
+                <td style="width:25%;vertical-align:top;text-align:right;font-size:11px;padding:2px">
                     ' . (static::getStampBase64()
                         ? '<img src="' . static::getStampBase64() . '" style="max-width:120px;max-height:120px;width:auto;height:auto" alt="Stamp">'
                         : '') . '
@@ -468,27 +464,27 @@ expedited for 48 hours from the date of order.';
         <!-- HEADER -->
         <table class="header-table" style="width:100%;margin-bottom:12px;direction:ltr">
             <tr>
-                <td class="contact-left" style="width:30%">
-                    <b>Phone:</b> +97477000451<br>
-                    <b>AlDoha - Area 26</b><br>
-                    <b>Str 940 - Najma</b><br>
-                    <b>Office 201</b><br>
-                    <b>Email:</b> Info@clickandfixqa.com
+                <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
+                    +97477000451<br>
+                    AlDoha - Area 26<br>
+                    Str 940 - Najma<br>
+                    Office 201<br>
+                    Info@clickandfixqa.com
                 </td>
                 <td class="center" style="width:40%;direction:ltr">'
                     . ($logo ? '<img src="' . $logo . '" style="max-height:60px;width:auto" alt="Logo"><br>' : '')
-                    . '<div style="font-size:10px">' . $s('كليك اند فيكس للسيارات') . '</div>
+                    . '<div style="font-size:10px;font-weight:bold">' . $s('كليك اند فيكس للسيارات') . '</div>
                     <div style="font-size:14px;font-weight:bold">Click and Fix</div>
                 </td>
-                <td style="width:30%;vertical-align:top;padding:10px;font-size:10px;text-align:right">
-                    <div style="direction:rtl;unicode-bidi:embed">' . $headingRight . '</div>
+                <td style="width:30%;vertical-align:top;padding:10px;font-size:14px;font-weight:bold;text-align:right">
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $headingRight . '</div>
                 </td>
             </tr>
         </table>
 
-        <h2 style="text-align:left;font-size:14px;margin:20px 0">Terms And Conditions</h2>
+        <h2 style="text-align:left;font-size:16px;margin:20px 0">Terms And Conditions</h2>
 
-        <div style="font-size:12px;line-height:1.6;direction:ltr;text-align:left;width:210mm;margin-left:-10mm;padding:0 10mm;box-sizing:border-box">
+        <div style="font-size:13px;line-height:1.6;direction:ltr;text-align:left;width:210mm;margin-left:-10mm;padding:0 10mm;box-sizing:border-box">
             ' . nl2br(e($page2Terms)) . '
         </div>';
         

@@ -235,12 +235,9 @@ class InvoiceResource extends Resource
         $dir = $forPdf ? 'ltr' : 'rtl';
         $footerStyle = $forPdf ? 'position:fixed;bottom:0;left:0;right:0;width:100%' : 'width:100%;margin-top:30px';
 
-        $arPhone = $s('الجوال:');
         $arAddress = $s('الدوحة - المنطقة 26');
         $arStreet = $s('شارع 940 - النجمة');
         $arOffice = $s('مكتب 201');
-        $arEmail = $s('البريد الإلكتروني:');
-        $arCustomer = $s('السيد');
         $arInvoiceNo = $s('رقم الفاتورة');
         $arDate = $s('تاريخ');
         $arPaymentMethod = $s('طريقة الدفع');
@@ -254,11 +251,9 @@ class InvoiceResource extends Resource
         $arNet = $s('الصافي');
 
         if ($forPdf) {
-            $contactPhone = '+97477000451 ' . $arPhone;
-            $contactEmail = 'info@clickandfixqa.com ' . $arEmail;
+            $contactPhone = '+97477000451';
         } else {
-            $contactPhone = $arPhone . ' +97477000451';
-            $contactEmail = $arEmail . ' info@clickandfixqa.com';
+            $contactPhone = '+97477000451';
         }
 
         $items = $get('items') ?? [];
@@ -284,12 +279,12 @@ class InvoiceResource extends Resource
             $description = $s(e($desc));
 
             $itemsRows .= '<tr>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . $slNo . '</td>
-                <td style="text-align:center;padding:4px 6px;border:1px solid #000;font-size:10px">' . $description . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . e($unit) . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . $qty . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . number_format($unitPrice, 2) . '</td>
-                <td style="text-align:center;padding:4px 2px;border:1px solid #000;font-size:10px">' . number_format($amount, 2) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . $slNo . '</td>
+                <td style="text-align:center;padding:6px 8px;border:1px solid #000;font-size:12px">' . $description . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . e($unit) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . $qty . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . number_format($unitPrice, 2) . '</td>
+                <td style="text-align:center;padding:6px 4px;border:1px solid #000;font-size:12px">' . number_format($amount, 2) . '</td>
             </tr>';
             $slNo++;
         }
@@ -326,38 +321,37 @@ class InvoiceResource extends Resource
         <!-- HEADER -->
         <table class="header-table" style="width:100%;margin-bottom:8px;direction:ltr">
             <tr>
-                <td class="contact-left" style="width:30%">
-                    <b>Phone:</b> +97477000451<br>
-                    <b>AlDoha - Area 26</b><br>
-                    <b>Str 940 - Najma</b><br>
-                    <b>Office 201</b><br>
-                    <b>Email:</b> Info@clickandfixqa.com
+                <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
+                    +97477000451<br>
+                    AlDoha - Area 26<br>
+                    Str 940 - Najma<br>
+                    Office 201<br>
+                    Info@clickandfixqa.com
                 </td><td class="center" style="width:40%;direction:ltr">'
                     . ($logo ? '<img src="' . $logo . '" style="max-height:100px;width:auto;display:block;margin:0 auto;" alt="Logo"><br>' : '')
-                    . '<div style="font-size:10px">' . $s('كليك اند فيكس للسيارات') . '</div>
-                    <div style="font-size:10px;font-weight:bold;margin-top:4px">Click and Fix</div>
+                    . '<div style="font-size:18px;font-weight:bold">' . $s('كليك اند فيكس للسيارات') . '</div>
+                    <div style="font-size:18px;font-weight:bold;margin-top:4px">Click and Fix</div>
 
                     
                 </td>
-                <td style="width:30%;vertical-align:top;padding:10px;font-size:10px;text-align:right">
-                    <div style="direction:rtl;unicode-bidi:embed">' . $contactPhone . '</div>
-                    <div style="direction:rtl;unicode-bidi:embed">' . $arAddress . '</div>
-                    <div style="direction:rtl;unicode-bidi:embed">' . $arStreet . '</div>
-                    <div style="direction:rtl;unicode-bidi:embed">' . $arOffice . '</div>
-                    <div style="direction:rtl;unicode-bidi:embed">' . $contactEmail . '</div>
+                <td style="width:30%;vertical-align:top;padding:10px;font-size:14px;font-weight:bold;text-align:right">
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $contactPhone . '</div>
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $arAddress . '</div>
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $arStreet . '</div>
+                    <div style="direction:rtl;unicode-bidi:embed;white-space:nowrap">' . $arOffice . '</div>
                 </td>
             </tr>
         </table>
 
         <!-- CUSTOMER & INVOICE INFO -->
-        <table class="bordered" style="margin-bottom:8px">
+        <table class="bordered" style="margin-bottom:8px;font-size:12px">
             <tr>
-                <td style="width:40%;padding:6px;border:1px solid #000;text-align:center"><b>Customer Name / ' . $arCustomer . '</b></td>
+                <td style="width:40%;padding:6px;border:1px solid #000;text-align:center"><b>Masters/Mr ' . $s('السيد\السادة') . '</b></td>
                 <td style="width:30%;padding:6px;border:1px solid #000;text-align:center"><b>Invoice No. / ' . $arInvoiceNo . '</b></td>
                 <td style="width:30%;padding:6px;border:1px solid #000;text-align:center"><b>Date / ' . $arDate . '</b></td>
             </tr>
             <tr>
-                <td style="padding:6px;border:1px solid #000;text-align:center" rowspan="2">' . $s(e($customerName)) . '</td>
+                <td style="padding:8px;border:1px solid #000;text-align:center;font-size:14px;font-weight:bold" rowspan="2">' . $s(e($customerName)) . '</td>
                 <td style="padding:6px;border:1px solid #000;text-align:center">' . e($invoiceNumber) . '</td>
                 <td style="padding:6px;border:1px solid #000;text-align:center">' . e($date) . '</td>
             </tr>
@@ -371,12 +365,12 @@ class InvoiceResource extends Resource
         <table class="bordered" style="margin-bottom:8px">
             <thead>
                 <tr>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Sl No.</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Description / ' . $arDescription . '</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Unit / ' . $arunit . '</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Qty / ' . $arQty . '</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Unit Price (Qrs.) / ' . $arUnitPrice . '</th>
-                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:10px;background:#f0f0f0">Amount (Qrs.) / ' . $arAmount . '</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Sl No.</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Description / ' . $arDescription . '</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Unit / ' . $arunit . '</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Qty / ' . $arQty . '</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Unit Price (Qrs.) / ' . $arUnitPrice . '</th>
+                    <th style="text-align:center;padding:6px 2px;border:1px solid #000;font-size:12px;background:#f0f0f0">Amount (Qrs.) / ' . $arAmount . '</th>
                 </tr>
             </thead>
             <tbody>
@@ -385,18 +379,18 @@ class InvoiceResource extends Resource
         </table>
 
         <!-- SUMMARY -->
-        <table class="bordered" style="margin-bottom:8px;width:50%;float:right">
+        <table class="bordered" style="margin-bottom:8px;width:100%">
             <tr>
-                <td style="padding:6px;border:1px solid #000;font-size:10px;text-align:center"><b>Gross Amount - ' . $arGross . '</b></td>
-                <td style="padding:6px;border:1px solid #000;text-align:center;font-size:10px">' . $grossAmt . '<br><span style="font-size:8px">' . $grossWords . '</span></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;font-size:12px;text-align:center"><b>Gross Amount - ' . $arGross . '</b></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;text-align:center;font-size:12px">' . $grossAmt . ' ' . $grossWords . '</td>
             </tr>
             <tr>
-                <td style="padding:6px;border:1px solid #000;font-size:10px;text-align:center"><b>Discount - ' . $arDiscount . '</b></td>
-                <td style="padding:6px;border:1px solid #000;text-align:center;font-size:10px">' . $discAmt . '<br><span style="font-size:8px">' . $discountWords . '</span></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;font-size:12px;text-align:center"><b>Discount - ' . $arDiscount . '</b></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;text-align:center;font-size:12px">' . $discAmt . ' ' . $discountWords . '</td>
             </tr>
             <tr>
-                <td style="padding:6px;border:1px solid #000;font-size:10px;text-align:center"><b>Net Amount - ' . $arNet . '</b></td>
-                <td style="padding:6px;border:1px solid #000;text-align:center;font-size:11px;font-weight:bold">' . $netAmt . '<br><span style="font-size:8px">' . $netWords . '</span></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;font-size:12px;text-align:center"><b>Net Amount - ' . $arNet . '</b></td>
+                <td style="width:50%;padding:6px;border:1px solid #000;text-align:center;font-size:13px;font-weight:bold">' . $netAmt . ' ' . $netWords . '</td>
             </tr>
         </table>
 

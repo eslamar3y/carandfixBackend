@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ar', function () {
+    return view('welcome-ar');
+});
+
 Route::get('/locale/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'ar'])) {
         session(['locale' => $locale]);
