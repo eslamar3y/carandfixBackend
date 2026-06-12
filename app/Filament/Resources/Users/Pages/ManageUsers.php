@@ -18,11 +18,14 @@ class ManageUsers extends ManageRecords
             __('All') => Tab::make()
                 ->badge(User::count()),
             __('Customers') => Tab::make()
-                ->badge(User::where('role', 'customer')->count())
-                ->query(fn($query) => $query->where('role', 'customer')),
+                ->badge(User::where('role', 'customer')->where('email', 'not like', 'guest_%')->count())
+                ->query(fn($query) => $query->where('role', 'customer')->where('email', 'not like', 'guest_%')),
             __('Active Customers') => Tab::make()
-                ->badge(User::where('role', 'customer')->where('is_active', true)->count())
-                ->query(fn($query) => $query->where('role', 'customer')->where('is_active', true)),
+                ->badge(User::where('role', 'customer')->where('is_active', true)->where('email', 'not like', 'guest_%')->count())
+                ->query(fn($query) => $query->where('role', 'customer')->where('is_active', true)->where('email', 'not like', 'guest_%')),
+            __('Guests') => Tab::make()
+                ->badge(User::where('email', 'like', 'guest_%')->count())
+                ->query(fn($query) => $query->where('email', 'like', 'guest_%')),
             __('Technicians') => Tab::make()
                 ->badge(User::where('role', 'technician')->count())
                 ->query(fn($query) => $query->where('role', 'technician')),

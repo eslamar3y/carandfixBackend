@@ -52,7 +52,7 @@ class UserResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return (string) User::where('role', 'customer')->count();
+        return (string) User::where('role', 'customer')->where('is_active', true)->where('email', 'not like', 'guest_%')->count();
     }
 
     public static function form(Schema $schema): Schema
