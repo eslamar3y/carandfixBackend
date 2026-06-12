@@ -23,6 +23,9 @@ class Brand extends Model
     {
         static::saving(function ($model) {
             if ((float) $model->price == 0) $model->price = null;
+            if (is_array($model->fields)) {
+                $model->fields = array_map(fn($v) => $v ? 1 : 0, $model->fields);
+            }
         });
     }
 

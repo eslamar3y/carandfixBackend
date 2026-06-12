@@ -13,6 +13,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Section;
 
 class BrandsRelationManager extends RelationManager
 {
@@ -31,6 +33,24 @@ class BrandsRelationManager extends RelationManager
             TextInput::make('name_ar')->label(__('Name (AR)'))->required(),
             TextInput::make('price')->label(__('Price'))->numeric()->nullable(),
             FileUpload::make('image')->label(__('Image'))->image()->directory('brands')->disk('public')->required(),
+            Section::make(__('Order Fields'))
+                ->description(__('Choose which fields appear on the order page'))
+                ->columns(2)
+                ->schema([
+                    Toggle::make('fields.selectCar')->label('Select Car'),
+                    Toggle::make('fields.pickLocation')->label('Pick Location'),
+                    Toggle::make('fields.manufactory')->label('Manufactory'),
+                    Toggle::make('fields.batteryVoltage')->label('Battery Voltage'),
+                    Toggle::make('fields.withService')->label('With Service'),
+                    Toggle::make('fields.carLicense')->label('Car License'),
+                    Toggle::make('fields.withFilter')->label('With Filter'),
+                    Toggle::make('fields.pickDate')->label('Pick Date'),
+                    Toggle::make('fields.startTime')->label('Start Time'),
+                    Toggle::make('fields.endTime')->label('End Time'),
+                    Toggle::make('fields.note')->label('Note'),
+                    Toggle::make('fields.phone')->label('Phone'),
+                    Toggle::make('fields.PaymentMethod')->label('Payment Method'),
+                ]),
         ]);
     }
 
