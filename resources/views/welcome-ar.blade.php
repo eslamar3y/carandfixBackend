@@ -217,6 +217,7 @@
                 <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#screenshots">لقطات الشاشة</a></li>
                 <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#contactus">تواصل معنا</a></li>
                 <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar/privacy-policy') }}">سياسة الخصوصية</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar/delete-account-info') }}">حذف الحساب</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">

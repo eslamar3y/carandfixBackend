@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>سياسة الخصوصية - Click And Fix</title>
+    <title>حذف الحساب - Click And Fix</title>
 
     <link rel="icon" sizes="128x128" href="{{ asset('assets/img/favicons/click_and_fix_favico.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -26,8 +26,8 @@
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="{{ url('/ar') }}">الرئيسية</a></li>
               <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AR</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ url('/privacy-policy') }}">EN</a></li>
-                  <li><a class="dropdown-item" href="{{ url('/ar/privacy-policy') }}">AR</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/delete-account-info') }}">EN</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/ar/delete-account-info') }}">AR</a></li>
                 </ul>
               </li>
             </ul>
@@ -39,102 +39,24 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <h1 class="fw-bold mb-4">سياسة الخصوصية</h1>
-              <p class="mb-4 fw-medium">آخر تحديث: يونيو 2026</p>
+              <h1 class="fw-bold mb-4">حذف الحساب</h1>
 
-              <h4 class="fw-bold mt-5 mb-3">سياسة الخصوصية لـ Click & Fix</h4>
-              <p class="mb-4 fw-medium">Click & Fix ("نحن" أو "خاصتنا") ملتزمون بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وتخزين وحماية معلوماتك عند استخدام تطبيق Click & Fix للجوال والخدمات ذات الصلة.</p>
-              <p class="mb-4 fw-medium">باستخدامك لتطبيق Click & Fix، فإنك توافق على جمع واستخدام المعلومات وفقًا لسياسة الخصوصية هذه.</p>
+              <p class="mb-4 fw-medium">يمكن للمستخدمين حذف حساب Click & Fix الخاص بهم مباشرة من داخل التطبيق باتباع الخطوات التالية:</p>
 
-              <h4 class="fw-bold mt-5 mb-3">المعلومات التي نجمعها</h4>
+              <ol class="fw-medium mb-4">
+                <li class="mb-2">افتح تطبيق Click & Fix.</li>
+                <li class="mb-2">اذهب إلى الإعدادات.</li>
+                <li class="mb-2">افتح الملف الشخصي.</li>
+                <li class="mb-2">اختر حذف الحساب.</li>
+                <li class="mb-2">قم بتأكيد طلب حذف الحساب.</li>
+              </ol>
 
-              <h5 class="fw-bold mt-4 mb-2">المعلومات الشخصية</h5>
-              <p class="fw-medium">عند إنشاء حساب أو استخدام خدماتنا، قد نجمع:</p>
-              <ul class="fw-medium">
-                <li>الاسم الكامل</li>
-                <li>رقم الهاتف</li>
-                <li>البريد الإلكتروني (إذا تم تقديمه)</li>
-                <li>معلومات المركبة</li>
-                <li>طلبات الخدمة وتفاصيل الحجز</li>
-              </ul>
+              <p class="mb-4 fw-medium">بمجرد تأكيد طلب الحذف، سيتم حذف حساب المستخدم وجميع البيانات الشخصية المرتبطة به نهائيًا من أنظمتنا، باستثناء أي معلومات مطلوب منا الاحتفاظ بها للأغراض القانونية أو التنظيمية أو المحاسبية.</p>
 
-              <h5 class="fw-bold mt-4 mb-2">معلومات الموقع</h5>
-              <p class="fw-medium">نجمع موقع جهازك من أجل:</p>
-              <ul class="fw-medium">
-                <li>تحديد موقع الخدمة الخاص بك</li>
-                <li>توجيه الفنيين بكفاءة</li>
-                <li>توفير تغطية خدمة دقيقة</li>
-                <li>تحسين تقديم الخدمة</li>
-              </ul>
-              <p class="fw-medium">يتم جمع بيانات الموقع فقط عند الضرورة لتقديم خدماتنا.</p>
-
-              <h5 class="fw-bold mt-4 mb-2">مستندات وصور المركبة</h5>
-              <p class="fw-medium">يمكن للمستخدمين تحميل:</p>
-              <ul class="fw-medium">
-                <li>مستندات تسجيل المركبة</li>
-                <li>صور المركبة</li>
-                <li>صور متعلقة بالخدمة</li>
-              </ul>
-              <p class="fw-medium">تُستخدم هذه المستندات فقط لتحديد هوية المركبة والتحقق من الخدمة ولأغراض تشغيلية.</p>
-
-              <h5 class="fw-bold mt-4 mb-2">معلومات الجهاز</h5>
-              <p class="fw-medium">قد نجمع تلقائيًا:</p>
-              <ul class="fw-medium">
-                <li>نوع الجهاز</li>
-                <li>نظام التشغيل</li>
-                <li>إصدار التطبيق</li>
-                <li>معلومات التشخيص والأعطال</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">كيف نستخدم معلوماتك</h4>
-              <p class="fw-medium">نستخدم المعلومات التي تم جمعها من أجل:</p>
-              <ul class="fw-medium">
-                <li>إنشاء وإدارة حسابات المستخدمين</li>
-                <li>جدولة وتقديم خدمات السيارات</li>
-                <li>التواصل بخصوص المواعيد وطلبات الخدمة</li>
-                <li>التحقق من ملكية المركبة وأهلية الخدمة</li>
-                <li>تحسين أداء التطبيق وتجربة المستخدم</li>
-                <li>الرد على استفسارات دعم العملاء</li>
-                <li>الامتثال للالتزامات القانونية</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">مشاركة المعلومات</h4>
-              <p class="fw-medium">نحن لا نبيع أو نؤجر أو نتبادل معلوماتك الشخصية.</p>
-              <p class="fw-medium">قد تتم مشاركة المعلومات فقط مع:</p>
-              <ul class="fw-medium">
-                <li>موظفي وفنيي Click & Fix المصرح لهم</li>
-                <li>مقدمي الخدمات المساعدين في عمليات التطبيق</li>
-                <li>الجهات الحكومية عندما يطلب القانون ذلك</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">أمان البيانات</h4>
-              <p class="fw-medium">ننفذ تدابير تنظيمية وتقنية معقولة لحماية معلوماتك من الوصول غير المصرح به أو التغيير أو الإفصاح أو التدمير.</p>
-              <p class="fw-medium">بينما نسعى لحماية معلوماتك، لا توجد طريقة للتخزين الإلكتروني أو النقل آمنة تمامًا.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">الاحتفاظ بالبيانات</h4>
-              <p class="fw-medium">نحتفظ بمعلوماتك فقط طالما كان ذلك ضروريًا لتقديم الخدمات والامتثال للالتزامات القانونية وحل النزاعات وتنفيذ الاتفاقيات.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">حقوقك</h4>
-              <p class="fw-medium">يحق لك:</p>
-              <ul class="fw-medium">
-                <li>الوصول إلى معلوماتك الشخصية</li>
-                <li>طلب تصحيح المعلومات غير الدقيقة</li>
-                <li>طلب حذف حسابك والبيانات المرتبطة به، وفقًا للمتطلبات القانونية والتشغيلية</li>
-              </ul>
-              <p class="fw-medium">يمكن تقديم طلبات حذف الحساب من خلال التطبيق أو بالاتصال بنا مباشرة.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">خصوصية الأطفال</h4>
-              <p class="fw-medium">خدمات Click & Fix غير مخصصة للأفراد الذين تقل أعمارهم عن 18 عامًا. نحن لا نجمع معلومات من القاصرين عن قصد.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">تغييرات سياسة الخصوصية هذه</h4>
-              <p class="fw-medium">قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات داخل التطبيق وعلى موقعنا الإلكتروني.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">اتصل بنا</h4>
-              <p class="fw-medium">إذا كانت لديك أي أسئلة بخصوص سياسة الخصوصية هذه، يرجى الاتصال بنا:</p>
+              <p class="mb-4 fw-medium">إذا كنت بحاجة إلى مساعدة، يرجى الاتصال بنا على:</p>
               <p class="fw-medium">
-                Click & Fix<br>
-                الموقع الإلكتروني: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a><br>
-                البريد الإلكتروني: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a>
+                البريد الإلكتروني: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a><br>
+                الموقع الإلكتروني: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a>
               </p>
             </div>
           </div>
@@ -176,7 +98,6 @@
             </div>
           </div>
         </div>
-
       </section>
 
       <div class="py-5 text-center">

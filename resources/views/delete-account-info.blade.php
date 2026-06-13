@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Privacy Policy - Click And Fix</title>
+    <title>Account Deletion - Click And Fix</title>
 
     <link rel="icon" sizes="128x128" href="{{ asset('assets/img/favicons/click_and_fix_favico.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -26,8 +26,8 @@
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="{{ url('/') }}">Home</a></li>
               <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ url('/privacy-policy') }}">EN</a></li>
-                  <li><a class="dropdown-item" href="{{ url('/ar/privacy-policy') }}">AR</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/delete-account-info') }}">EN</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/ar/delete-account-info') }}">AR</a></li>
                 </ul>
               </li>
             </ul>
@@ -39,102 +39,24 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <h1 class="fw-bold mb-4">Privacy Policy</h1>
-              <p class="mb-4 fw-medium">Last Updated: June 2026</p>
+              <h1 class="fw-bold mb-4">Account Deletion</h1>
 
-              <h4 class="fw-bold mt-5 mb-3">Click & Fix Privacy Policy</h4>
-              <p class="mb-4 fw-medium">Click & Fix ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Click & Fix mobile application and related services.</p>
-              <p class="mb-4 fw-medium">By using the Click & Fix application, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+              <p class="mb-4 fw-medium">Users can delete their Click & Fix account directly from within the application by following these steps:</p>
 
-              <h4 class="fw-bold mt-5 mb-3">Information We Collect</h4>
+              <ol class="fw-medium mb-4">
+                <li class="mb-2">Open the Click & Fix application.</li>
+                <li class="mb-2">Go to Settings.</li>
+                <li class="mb-2">Open Profile.</li>
+                <li class="mb-2">Select Delete Account.</li>
+                <li class="mb-2">Confirm the account deletion request.</li>
+              </ol>
 
-              <h5 class="fw-bold mt-4 mb-2">Personal Information</h5>
-              <p class="fw-medium">When you create an account or use our services, we may collect:</p>
-              <ul class="fw-medium">
-                <li>Full name</li>
-                <li>Phone number</li>
-                <li>Email address (if provided)</li>
-                <li>Vehicle information</li>
-                <li>Service requests and booking details</li>
-              </ul>
+              <p class="mb-4 fw-medium">Once the deletion request is confirmed, the user's account and associated personal data will be permanently removed from our systems, except for any information that we are required to retain for legal, regulatory, or accounting purposes.</p>
 
-              <h5 class="fw-bold mt-4 mb-2">Location Information</h5>
-              <p class="fw-medium">We collect your device location to:</p>
-              <ul class="fw-medium">
-                <li>Identify your service location</li>
-                <li>Dispatch technicians efficiently</li>
-                <li>Provide accurate service coverage</li>
-                <li>Improve service delivery</li>
-              </ul>
-              <p class="fw-medium">Location data is collected only when necessary to provide our services.</p>
-
-              <h5 class="fw-bold mt-4 mb-2">Vehicle Documents and Images</h5>
-              <p class="fw-medium">Users may upload:</p>
-              <ul class="fw-medium">
-                <li>Vehicle registration documents</li>
-                <li>Vehicle photos</li>
-                <li>Service-related images</li>
-              </ul>
-              <p class="fw-medium">These documents are used solely for vehicle identification, service verification, and operational purposes.</p>
-
-              <h5 class="fw-bold mt-4 mb-2">Device Information</h5>
-              <p class="fw-medium">We may automatically collect:</p>
-              <ul class="fw-medium">
-                <li>Device type</li>
-                <li>Operating system</li>
-                <li>Application version</li>
-                <li>Diagnostic and crash information</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">How We Use Your Information</h4>
-              <p class="fw-medium">We use the collected information to:</p>
-              <ul class="fw-medium">
-                <li>Create and manage user accounts</li>
-                <li>Schedule and provide automotive services</li>
-                <li>Communicate regarding appointments and service requests</li>
-                <li>Verify vehicle ownership and service eligibility</li>
-                <li>Improve application performance and user experience</li>
-                <li>Respond to customer support inquiries</li>
-                <li>Comply with legal obligations</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">Information Sharing</h4>
-              <p class="fw-medium">We do not sell, rent, or trade your personal information.</p>
-              <p class="fw-medium">Information may be shared only with:</p>
-              <ul class="fw-medium">
-                <li>Authorized Click & Fix employees and technicians</li>
-                <li>Service providers assisting in application operations</li>
-                <li>Government authorities when required by law</li>
-              </ul>
-
-              <h4 class="fw-bold mt-5 mb-3">Data Security</h4>
-              <p class="fw-medium">We implement reasonable technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction.</p>
-              <p class="fw-medium">While we strive to protect your information, no method of electronic storage or transmission is completely secure.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">Data Retention</h4>
-              <p class="fw-medium">We retain your information only for as long as necessary to provide services, comply with legal obligations, resolve disputes, and enforce agreements.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">Your Rights</h4>
-              <p class="fw-medium">You may:</p>
-              <ul class="fw-medium">
-                <li>Access your personal information</li>
-                <li>Request corrections to inaccurate information</li>
-                <li>Request deletion of your account and associated data, subject to legal and operational requirements</li>
-              </ul>
-              <p class="fw-medium">Account deletion requests may be submitted through the application or by contacting us directly.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">Children's Privacy</h4>
-              <p class="fw-medium">Click & Fix services are not intended for individuals under the age of 18. We do not knowingly collect information from minors.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">Changes to This Privacy Policy</h4>
-              <p class="fw-medium">We may update this Privacy Policy from time to time. Any changes will be posted within the application and on our website.</p>
-
-              <h4 class="fw-bold mt-5 mb-3">Contact Us</h4>
-              <p class="fw-medium">If you have any questions regarding this Privacy Policy, please contact us:</p>
+              <p class="mb-4 fw-medium">If you require assistance, please contact us at:</p>
               <p class="fw-medium">
-                Click & Fix<br>
-                Website: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a><br>
-                Email: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a>
+                Email: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a><br>
+                Website: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a>
               </p>
             </div>
           </div>

@@ -18,6 +18,14 @@ Route::get('/ar/privacy-policy', function () {
     return view('privacy-policy-ar');
 });
 
+Route::get('/delete-account-info', function () {
+    return view('delete-account-info');
+});
+
+Route::get('/ar/delete-account-info', function () {
+    return view('delete-account-info-ar');
+});
+
 Route::get('/locale/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'ar'])) {
         session(['locale' => $locale]);
