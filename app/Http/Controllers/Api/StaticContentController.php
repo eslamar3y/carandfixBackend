@@ -11,15 +11,16 @@ class StaticContentController extends Controller
 {
     public function terms(): JsonResponse
     {
+        $locale = request()->header('Accept-Language', 'en');
         $terms = TermsCondition::first();
 
         return response()->json([
             'error' => false,
             'message' => 'success',
             'data' => $terms ? [
-                'nameEn' => $terms->name_en,
+                'nameEn' => $locale === 'ar' ? ($terms->name_ar ?? $terms->name_en) : $terms->name_en,
                 'nameAr' => $terms->name_ar,
-                'descriptionEn' => $terms->description_en,
+                'descriptionEn' => $locale === 'ar' ? ($terms->description_ar ?? $terms->description_en) : $terms->description_en,
                 'descriptionAr' => $terms->description_ar,
             ] : null,
         ]);
