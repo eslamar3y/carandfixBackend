@@ -127,8 +127,8 @@ class QuotationResource extends Resource
                             $body = $match[1] ?? $html;
                             preg_match('/<style>(.*?)<\/style>/s', $html, $styleMatch);
                             $style = $styleMatch[1] ?? '';
-                            return '<div style="background:#e8e8e8;padding:20px;display:flex;justify-content:center;min-height:800px">
-                                <div style="background:white;width:210mm;min-height:297mm;padding:10mm;box-shadow:0 2px 12px rgba(0,0,0,0.15);align-self:flex-start;box-sizing:border-box">
+                            return '<div style="background:#e8e8e8;padding:10px;overflow-x:auto;min-height:100vh">
+                                <div style="background:white;width:210mm;min-height:297mm;padding:10mm;margin:0 auto;box-shadow:0 2px 12px rgba(0,0,0,0.15);box-sizing:border-box">
                                     <style>' . $style . '</style>
                                     ' . $body . '
                                 </div>
