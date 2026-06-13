@@ -10,6 +10,14 @@ Route::get('/ar', function () {
     return view('welcome-ar');
 });
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+});
+
+Route::get('/ar/privacy-policy', function () {
+    return view('privacy-policy-ar');
+});
+
 Route::get('/locale/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'ar'])) {
         session(['locale' => $locale]);
