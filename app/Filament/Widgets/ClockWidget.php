@@ -24,6 +24,6 @@ class ClockWidget extends Widget
 
     public function refresh(): void
     {
-        $this->time = now()->translatedFormat('h:i:s A');
+        $this->time = now()->translatedFormat('h:i:s A') . ' UTC';
     }
 }

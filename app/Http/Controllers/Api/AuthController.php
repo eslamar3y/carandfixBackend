@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\DeviceToken;
+use App\Models\Notification;
+use App\Services\FCMService;
 use App\Models\User;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\JsonResponse;
@@ -135,6 +137,36 @@ class AuthController extends Controller
         }
 
         $token = $user->createToken('auth-token')->plainTextToken;
+
+        $alreadyWelcomed = Notification::where('user_id', $user->id)
+            ->where('title', 'LIKE', 'Welcome%')
+            ->exists();
+
+        if (!$alreadyWelcomed) {
+            try {
+                Notification::create([
+                    'user_id' => $user->id,
+                    'title' => 'Welcome ' . $user->name . ',',
+                    'body' => "Thank you for signing up with Click & Fix!\n\nYou can start using our Emergency Services immediately after logging in.\n\nTo access all other services, you need to register your car through the app:\n\nGo to: My Car → Add Car\n\nOnce the system administrator approves your car registration, you'll be able to enjoy all our services easily and seamlessly.\n\nBest regards,\nClick & Fix Team",
+                    'title_ar' => 'أهلاً وسهلاً ' . $user->name . '،',
+                    'body_ar' => "نشكرك على التسجيل في تطبيق Click & Fix!\n\nيمكنك الاستفادة من خدمات الطوارئ مباشرةً بعد تسجيل الدخول.\n\nأما للاستفادة من باقي خدمات التطبيق، فستحتاج إلى تسجيل مركبتك من خلال:\n\nسيارتي ← إضافة سيارة\n\nوبمجرد موافقة مسؤول النظام على تسجيل المركبة، ستتمكن من استخدام جميع خدماتنا بكل سهولة.\n\nأطيب التحيات،\nفريق Click & Fix",
+                    'is_order' => false,
+                    'admin_sent' => false,
+                    'date' => now(),
+                ]);
+
+                app(FCMService::class)->send(
+                    $user,
+                    'Welcome ' . $user->name . ',',
+                    'Thank you for signing up with Click & Fix!',
+                    null,
+                    null,
+                    $user->locale,
+                );
+            } catch (\Throwable $e) {
+                \Illuminate\Support\Facades\Log::error('Failed to send welcome notification: ' . $e->getMessage());
+            }
+        }
 
         return response()->json([
             'error' => false,

@@ -61,7 +61,8 @@ class AboutAndContactResource extends Resource
                 TextColumn::make('phone')->label(__('Contact Phone')),
                 TextColumn::make('updated_at')->label(__('Updated'))->since(),
             ])
-            ->recordActions([EditAction::make()]);
+            ->recordActions([EditAction::make()])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array

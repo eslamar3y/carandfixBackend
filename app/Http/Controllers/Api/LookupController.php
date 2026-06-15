@@ -12,7 +12,7 @@ class LookupController extends Controller
 {
     public function carTypes(): JsonResponse
     {
-        $carTypes = CarType::with('carSubTypes')->get();
+        $carTypes = CarType::with('carSubTypes')->orderBy('name')->get();
 
         return response()->json([
             'error' => false,

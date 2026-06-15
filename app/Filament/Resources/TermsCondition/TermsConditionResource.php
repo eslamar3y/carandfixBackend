@@ -61,7 +61,8 @@ class TermsConditionResource extends Resource
                 TextColumn::make('name_ar')->limit(30)->label(__('Name (AR)')),
                 TextColumn::make('updated_at')->since(),
             ])
-            ->recordActions([EditAction::make()]);
+            ->recordActions([EditAction::make()])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array

@@ -89,7 +89,8 @@ class ServiceCategoryResource extends Resource
                 TextColumn::make('created_at')->label(__('Created'))->dateTime(),
             ])
             ->recordActions([EditAction::make(), DeleteAction::make()])
-            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])]);
+            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array

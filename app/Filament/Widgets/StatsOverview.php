@@ -26,19 +26,19 @@ class StatsOverview extends BaseWidget
         $panelPath = Filament::getCurrentPanel()->getPath();
 
         return [
-            Stat::make(__('Customers'), User::where('role', 'customer')->count())
+            Stat::make(__('Customers'), User::where('role', 'customer')->where('email', 'not like', 'guest_%')->count())
                 ->description(__('All registered customers'))
                 ->color('info')
                 ->url("/$panelPath/users")
                 ->columnSpan(2),
 
-            Stat::make(__('Active Customers'), User::where('role', 'customer')->where('is_active', true)->count())
+            Stat::make(__('Active Customers'), User::where('role', 'customer')->where('is_active', true)->where('email', 'not like', 'guest_%')->count())
                 ->description(__('Customers with active accounts'))
                 ->color('success')
                 ->url("/$panelPath/users")
                 ->columnSpan(2),
 
-            Stat::make(__('Inactive Customers'), User::where('role', 'customer')->where('is_active', false)->count())
+            Stat::make(__('Inactive Customers'), User::where('role', 'customer')->where('is_active', false)->where('email', 'not like', 'guest_%')->count())
                 ->description(__('Customers with inactive accounts'))
                 ->color('danger')
                 ->url("/$panelPath/users")

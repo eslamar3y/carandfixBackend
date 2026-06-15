@@ -100,6 +100,9 @@ class AdminDashboardController extends Controller
                 $notification->body,
                 $validated['order_id'] ?? null,
                 'admin',
+                null,
+                $notification->title_ar,
+                $notification->body_ar,
             );
         }
 

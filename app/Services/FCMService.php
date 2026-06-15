@@ -26,6 +26,8 @@ class FCMService
         ?int $orderId = null,
         ?string $type = null,
         ?string $locale = null,
+        ?string $titleAr = null,
+        ?string $bodyAr = null,
     ): void {
         if (empty($this->clientEmail) || empty($this->privateKey)) {
             Log::warning('FCM service account not configured. Skipping push notification.');
@@ -51,6 +53,12 @@ class FCMService
         }
         if ($type !== null) {
             $data['type'] = $type;
+        }
+
+        $userLocale = $locale ?? $user->locale;
+        if ($userLocale === 'ar' && $titleAr !== null && $bodyAr !== null) {
+            $title = $titleAr;
+            $body = $bodyAr;
         }
 
         foreach ($tokens as $token) {

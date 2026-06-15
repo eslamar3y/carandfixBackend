@@ -74,6 +74,9 @@ class Car extends Model
                     $bodyEn,
                     null,
                     'car_status',
+                    null,
+                    $titleAr,
+                    $bodyAr,
                 );
             }
         });

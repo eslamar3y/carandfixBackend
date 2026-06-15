@@ -13,6 +13,6 @@ class CarType extends Model
 
     public function carSubTypes()
     {
-        return $this->hasMany(CarSubType::class);
+        return $this->hasMany(CarSubType::class)->orderBy('name');
     }
 }

@@ -47,6 +47,7 @@ class BrandCategoriesRelationManager extends RelationManager
             ->recordActions([
                 EditAction::make()->url(fn(BrandCategory $record) => BrandCategoryResource::getUrl('edit', ['record' => $record])),
                 DeleteAction::make(),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 }

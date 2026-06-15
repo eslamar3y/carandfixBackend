@@ -124,13 +124,19 @@ class IssueResource extends Resource
                                 $user,
                                 'Your issue has been solved',
                                 'Your issue has been reviewed and solved. Thank you for your patience.',
+                                null,
+                                null,
+                                null,
+                                'تم حل مشكلتك',
+                                'تم مراجعة مشكلتك وحلها، شكراً لصبرك.',
                             );
                         }
                     })
                     ->requiresConfirmation(),
                 DeleteAction::make(),
             ])
-            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])]);
+            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array

@@ -46,11 +46,6 @@ class NotificationResource extends Resource
         return __('nav.System');
     }
 
-    public static function getNavigationBadge(): ?string
-    {
-        return (string) NotificationModel::count();
-    }
-
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
@@ -77,7 +72,8 @@ class NotificationResource extends Resource
                 TextColumn::make('created_at')->dateTime(),
             ])
             ->recordActions([EditAction::make(), DeleteAction::make()])
-            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])]);
+            ->toolbarActions([BulkActionGroup::make([DeleteBulkAction::make()])])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getPages(): array

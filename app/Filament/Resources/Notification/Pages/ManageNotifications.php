@@ -67,7 +67,7 @@ class ManageNotifications extends ManageRecords
                             'date' => $date,
                             'admin_sent' => true,
                         ]);
-                        app(FCMService::class)->send($user, $n->title, $n->body, null, 'admin');
+                        app(FCMService::class)->send($user, $n->title, $n->body, null, 'admin', null, $n->title_ar, $n->body_ar);
                         $firstNotification ??= $n;
                     }
                     return $firstNotification ?? NotificationModel::latest()->first();

@@ -68,6 +68,9 @@ class Order extends Model
                     $bodyEn,
                     $order->id,
                     'order_status',
+                    null,
+                    'الطلب #' . $order->id,
+                    $bodyAr,
                 );
             }
         });

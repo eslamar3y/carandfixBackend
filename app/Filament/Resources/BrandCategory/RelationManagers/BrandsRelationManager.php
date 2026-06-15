@@ -66,6 +66,7 @@ class BrandsRelationManager extends RelationManager
             ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 }

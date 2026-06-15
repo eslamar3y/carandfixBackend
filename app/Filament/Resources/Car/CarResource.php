@@ -52,7 +52,7 @@ class CarResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return (string) Car::count();
+        return (string) Car::where('status', 'pending')->count();
     }
 
     public static function form(Schema $schema): Schema
@@ -93,7 +93,10 @@ class CarResource extends Resource
                     ->color('success')
                     ->icon(Heroicon::OutlinedCheck)
                     ->visible(fn(Car $record) => $record->status === 'pending')
-                    ->action(fn(Car $record) => $record->update(['status' => 'approved']))
+                    ->action(function (Car $record) {
+                        $record->update(['status' => 'approved']);
+                        $record->user->update(['is_active' => true]);
+                    })
                     ->requiresConfirmation(),
                 \Filament\Actions\Action::make('reject')
                     ->label(__('Reject'))
