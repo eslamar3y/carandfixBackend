@@ -18,7 +18,7 @@ class BrandCategory extends Model
 
     public function brands()
     {
-        return $this->hasMany(Brand::class)->orderBy('name');
+        return $this->hasMany(Brand::class);
     }
 
     public function part()
