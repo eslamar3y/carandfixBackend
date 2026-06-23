@@ -65,6 +65,7 @@ class AuthController extends Controller
 
         if ($validated['fcm_token'] ?? null) {
             $user->deviceTokens()->delete();
+            DeviceToken::where('fcm_token', $validated['fcm_token'])->delete();
             $user->deviceTokens()->create(['fcm_token' => $validated['fcm_token']]);
         }
 
@@ -129,6 +130,7 @@ class AuthController extends Controller
 
         if ($validated['fcm_token'] ?? null) {
             DeviceToken::where('user_id', $user->id)->delete();
+            DeviceToken::where('fcm_token', $validated['fcm_token'])->delete();
             $user->deviceTokens()->create(['fcm_token' => $validated['fcm_token']]);
         }
 
@@ -689,6 +691,7 @@ HTML
 
         if ($request->fcm_token) {
             $user->deviceTokens()->delete();
+            DeviceToken::where('fcm_token', $request->fcm_token)->delete();
             $user->deviceTokens()->create(['fcm_token' => $request->fcm_token]);
         }
 
