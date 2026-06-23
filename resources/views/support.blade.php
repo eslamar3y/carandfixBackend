@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Account Deletion - Click And Fix</title>
+    <title>Customer Support - Click And Fix</title>
 
     <link rel="icon" sizes="128x128" href="{{ asset('assets/img/favicons/click_and_fix_favico.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -26,8 +26,8 @@
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="{{ url('/') }}">Home</a></li>
               <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ url('/delete-account-info') }}">EN</a></li>
-                  <li><a class="dropdown-item" href="{{ url('/ar/delete-account-info') }}">AR</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/support') }}">EN</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/ar/support') }}">AR</a></li>
                 </ul>
               </li>
             </ul>
@@ -39,25 +39,46 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <h1 class="fw-bold mb-4">Account Deletion</h1>
+              <div class="text-center mb-5">
+                <h1 class="fw-bold mb-3">Click And Fix — Customer Support</h1>
+                <p class="fw-medium text-secondary fs-1 mb-0">We're here to help. You can reach our support team anytime using the details below.</p>
+              </div>
 
-              <p class="mb-4 fw-medium">Users can delete their Click & Fix account directly from within the application by following these steps:</p>
+              <h4 class="fw-bold mt-5 mb-3">Contact Us</h4>
+              <p class="fw-medium mb-2"><strong>Email:</strong> <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a></p>
+              <p class="fw-medium mb-2"><strong>Phone / WhatsApp:</strong> <a href="tel:+97477000451">+974 7700 0451</a></p>
+              <p class="fw-medium mb-2"><strong>Address:</strong> Aldoha – Area 26 – Str 940 – Najma – Office 201, Doha, Qatar</p>
 
-              <ol class="fw-medium mb-4">
-                <li class="mb-2">Open the Click & Fix application.</li>
-                <li class="mb-2">Go to Settings.</li>
-                <li class="mb-2">Open Profile.</li>
-                <li class="mb-2">Select Delete Account.</li>
-                <li class="mb-2">Confirm the account deletion request.</li>
-              </ol>
+              <div class="bg-light p-4 rounded-3 my-5 text-center">
+                <p class="fw-medium mb-0">To contact us, send an email or message us on WhatsApp and our team will respond as soon as possible.</p>
+              </div>
 
-              <p class="mb-4 fw-medium">Once the deletion request is confirmed, the user's account and associated personal data will be permanently removed from our systems, except for any information that we are required to retain for legal, regulatory, or accounting purposes.</p>
+              <h4 class="fw-bold mt-5 mb-4">Frequently Asked Questions (FAQ)</h4>
 
-              <p class="mb-4 fw-medium">If you require assistance, please contact us at:</p>
-              <p class="fw-medium">
-                Email: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a><br>
-                Website: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a>
-              </p>
+              <h5 class="fw-bold mt-4">1. What is Click and Fix?</h5>
+              <p class="fw-medium">Click and Fix is a mobile app that connects you with car maintenance and emergency roadside assistance services. You can request help, order a service, and track your requests directly from your phone.</p>
+
+              <h5 class="fw-bold mt-4">2. How do I request a service or place an order?</h5>
+              <p class="fw-medium">Open the app, choose the service you need (for example emergency assistance or a car service), add your car details, and submit your request. Our team will follow up with you.</p>
+
+              <h5 class="fw-bold mt-4">3. What services do you offer?</h5>
+              <p class="fw-medium">Car maintenance and repair services, as well as emergency roadside assistance. The currently available services are always shown inside the app.</p>
+
+              <h5 class="fw-bold mt-4">4. How can I track my request or order?</h5>
+              <p class="fw-medium">Open the orders/requests section in the app to see the status of each request.</p>
+
+              <h5 class="fw-bold mt-4">5. Which areas do you cover?</h5>
+              <p class="fw-medium">We operate in Qatar — Doha and the surrounding areas.</p>
+
+              <h5 class="fw-bold mt-4">6. How do I add or manage my car?</h5>
+              <p class="fw-medium">From the "My Car" section you can add and manage your vehicle details (type, engine, battery voltage, etc.) to make requesting services faster.</p>
+
+              <h5 class="fw-bold mt-4">7. I need help or want to report a problem — what should I do?</h5>
+              <p class="fw-medium">Contact us anytime by email or WhatsApp using the details above, and our support team will assist you.</p>
+
+              <div class="text-center mt-5 pt-3">
+                <p class="fw-bold fs-1">Click And Fix — Doha, Qatar</p>
+              </div>
             </div>
           </div>
         </div>

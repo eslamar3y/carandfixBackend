@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="ar" dir="rtl">
 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Account Deletion - Click And Fix</title>
+    <title>مركز دعم العملاء - Click And Fix</title>
 
     <link rel="icon" sizes="128x128" href="{{ asset('assets/img/favicons/click_and_fix_favico.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -19,15 +19,15 @@
 
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/img/logo.png') }}" height="100" alt="logo" /></a>
+        <div class="container"><a class="navbar-brand" href="{{ url('/ar') }}"><img src="{{ asset('assets/img/logo.png') }}" height="100" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="{{ url('/') }}">Home</a></li>
-              <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="{{ url('/ar') }}">الرئيسية</a></li>
+              <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AR</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{{ url('/delete-account-info') }}">EN</a></li>
-                  <li><a class="dropdown-item" href="{{ url('/ar/delete-account-info') }}">AR</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/support') }}">EN</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/ar/support') }}">AR</a></li>
                 </ul>
               </li>
             </ul>
@@ -39,25 +39,46 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-10">
-              <h1 class="fw-bold mb-4">Account Deletion</h1>
+              <div class="text-center mb-5">
+                <h1 class="fw-bold mb-3">Click And Fix — مركز دعم العملاء</h1>
+                <p class="fw-medium text-secondary fs-1 mb-0">نحن هنا لمساعدتك — يمكنك التواصل مع فريق الدعم في أي وقت عبر البيانات التالية.</p>
+              </div>
 
-              <p class="mb-4 fw-medium">Users can delete their Click & Fix account directly from within the application by following these steps:</p>
+              <h4 class="fw-bold mt-5 mb-3">تواصل معنا</h4>
+              <p class="fw-medium mb-2"><strong>البريد الإلكتروني:</strong> <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a></p>
+              <p class="fw-medium mb-2"><strong>هاتف / واتساب:</strong> <a href="tel:+97477000451">+974 7700 0451</a></p>
+              <p class="fw-medium mb-2"><strong>العنوان:</strong> الدوحة – منطقة 26 – شارع 940 – نجمة – مكتب 201، الدوحة، قطر</p>
 
-              <ol class="fw-medium mb-4">
-                <li class="mb-2">Open the Click & Fix application.</li>
-                <li class="mb-2">Go to Settings.</li>
-                <li class="mb-2">Open Profile.</li>
-                <li class="mb-2">Select Delete Account.</li>
-                <li class="mb-2">Confirm the account deletion request.</li>
-              </ol>
+              <div class="bg-light p-4 rounded-3 my-5 text-center">
+                <p class="fw-medium mb-0">للتواصل، أرسل بريدًا إلكترونيًا أو راسلنا على واتساب وسيرد عليك فريقنا في أقرب وقت.</p>
+              </div>
 
-              <p class="mb-4 fw-medium">Once the deletion request is confirmed, the user's account and associated personal data will be permanently removed from our systems, except for any information that we are required to retain for legal, regulatory, or accounting purposes.</p>
+              <h4 class="fw-bold mt-5 mb-4">الأسئلة الشائعة</h4>
 
-              <p class="mb-4 fw-medium">If you require assistance, please contact us at:</p>
-              <p class="fw-medium">
-                Email: <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a><br>
-                Website: <a href="https://clickandfixqa.com">https://clickandfixqa.com</a>
-              </p>
+              <h5 class="fw-bold mt-4">1. ما هو تطبيق Click and Fix؟</h5>
+              <p class="fw-medium">تطبيق Click and Fix يصلك بخدمات صيانة السيارات والمساعدة الطارئة على الطريق. يمكنك طلب المساعدة وطلب الخدمات ومتابعة طلباتك مباشرة من هاتفك.</p>
+
+              <h5 class="fw-bold mt-4">2. كيف أطلب خدمة أو أنشئ طلبًا؟</h5>
+              <p class="fw-medium">افتح التطبيق، اختر الخدمة التي تحتاجها (مثل المساعدة الطارئة أو صيانة السيارة)، أضف بيانات سيارتك، ثم أرسل الطلب وسيتابع معك فريقنا.</p>
+
+              <h5 class="fw-bold mt-4">3. ما هي الخدمات التي تقدمونها؟</h5>
+              <p class="fw-medium">خدمات صيانة وإصلاح السيارات، بالإضافة إلى المساعدة الطارئة على الطريق. تظهر الخدمات المتاحة دائمًا داخل التطبيق.</p>
+
+              <h5 class="fw-bold mt-4">4. كيف أتابع حالة طلبي؟</h5>
+              <p class="fw-medium">افتح قسم الطلبات داخل التطبيق لمعرفة حالة كل طلب.</p>
+
+              <h5 class="fw-bold mt-4">5. ما هي المناطق التي تغطونها؟</h5>
+              <p class="fw-medium">نعمل في قطر — الدوحة والمناطق المحيطة بها.</p>
+
+              <h5 class="fw-bold mt-4">6. كيف أضيف سيارتي أو أديرها؟</h5>
+              <p class="fw-medium">من قسم «سيارتي» يمكنك إضافة وإدارة بيانات سيارتك (النوع، المحرك، فولت البطارية، إلخ) لتسريع طلب الخدمات.</p>
+
+              <h5 class="fw-bold mt-4">7. أحتاج مساعدة أو أريد الإبلاغ عن مشكلة — ماذا أفعل؟</h5>
+              <p class="fw-medium">تواصل معنا في أي وقت عبر البريد الإلكتروني أو واتساب باستخدام البيانات أعلاه، وسيقوم فريق الدعم بمساعدتك.</p>
+
+              <div class="text-center mt-5 pt-3">
+                <p class="fw-bold fs-1">Click And Fix — الدوحة، قطر</p>
+              </div>
             </div>
           </div>
         </div>
@@ -71,12 +92,12 @@
             <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
               <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Click And Fix</h4>
               <ul class="list-unstyled mb-0">
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/') }}#service">Services</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/') }}#screenshots">Screenshots</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/') }}#contactus">Contact Us</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/delete-account-info') }}">Account Deletion</a></li>
-                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/support') }}">Support</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar') }}#service">الخدمات</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar') }}#screenshots">لقطات الشاشة</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar') }}#contactus">تواصل معنا</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar/privacy-policy') }}">سياسة الخصوصية</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar/delete-account-info') }}">حذف الحساب</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="{{ url('/ar/support') }}">دعم العملاء</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
@@ -91,7 +112,7 @@
                 <a class="text-decoration-none icon-item shadow-social" id="tiktok" href="https://vm.tiktok.com/ZSeHUp2FT/"><svg hight="14" width="14" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg></a>
                 <a class="text-decoration-none icon-item shadow-social" id="snapchat" href="https://www.snapchat.com/add/clickandfixqa?share_id=PUQ3G70XjhU&locale=ar-JO"><svg hight="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M11.871 21.764c-1.19 0-1.984-.561-2.693-1.056-.503-.357-.976-.696-1.533-.79a4.568 4.568 0 0 0-.803-.066c-.472 0-.847.071-1.114.125-.17.03-.312.058-.424.058-.116 0-.263-.032-.32-.228-.05-.16-.081-.312-.112-.459-.08-.37-.147-.597-.286-.62-1.489-.227-2.38-.57-2.554-.976-.014-.044-.031-.09-.031-.125-.01-.125.08-.227.205-.25 1.181-.196 2.242-.824 3.138-1.858.696-.803 1.035-1.579 1.066-1.663 0-.01.009-.01.009-.01.17-.351.205-.65.102-.895-.191-.46-.825-.656-1.257-.79-.111-.03-.205-.066-.285-.093-.37-.147-.986-.46-.905-.892.058-.312.472-.535.811-.535.094 0 .174.014.24.05.38.173.723.262 1.017.262.366 0 .54-.138.584-.182a24.93 24.93 0 0 0-.035-.593c-.09-1.365-.192-3.059.24-4.03 1.298-2.907 4.053-3.14 4.869-3.14L12.156 3h.05c.815 0 3.57.227 4.868 3.139.437.971.33 2.67.24 4.03l-.008.067c-.01.182-.023.356-.032.535.045.035.205.169.535.173.286-.008.598-.102.954-.263a.804.804 0 0 1 .312-.066c.125 0 .25.03.357.066h.009c.299.112.495.321.495.54.009.205-.152.517-.914.825-.08.03-.174.067-.285.093-.424.13-1.057.335-1.258.79-.111.24-.066.548.103.895 0 .01.009.01.009.01.049.124 1.337 3.049 4.204 3.526a.246.246 0 0 1 .205.25c0 .044-.009.089-.031.129-.174.41-1.057.744-2.555.976-.138.022-.205.25-.285.62a6.831 6.831 0 0 1-.112.459c-.044.147-.138.227-.298.227h-.023c-.102 0-.24-.013-.423-.049a5.285 5.285 0 0 0-1.115-.116c-.263 0-.535.023-.802.067-.553.09-1.03.433-1.534.79-.717.49-1.515 1.051-2.697 1.051h-.254z"/></g></svg></a>
               </div>
-              <h4 class="fw-medium font-sans-serif text-secondary mb-3">Discover our app</h4>
+              <h4 class="fw-medium font-sans-serif text-secondary mb-3">حمل التطبيق الان</h4>
               <div class="d-flex align-items-center"> 
                 <a href="https://play.google.com/store/apps/details?id=com.emperorsoft.click_and_fix"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
                 <a href="https://apps.apple.com/jo/app/click-and-fix/id1603972575"> <img src="{{ asset('assets/img/apple-store.png') }}" alt="apple store" /></a>
@@ -99,10 +120,11 @@
             </div>
           </div>
         </div>
+
       </section>
 
       <div class="py-5 text-center">
-        <p class="mb-0 text-secondary fs--1 fw-medium">All rights <span><a href="https://emperorsoft.org/"> Emperor Soft</a> </span></p>
+        <p class="mb-0 text-secondary fs--1 fw-medium">جميع الحقوق محفوظه <span><a href="https://emperorsoft.org/"> Emperor Soft</a> </span></p>
       </div>
     </main>
 

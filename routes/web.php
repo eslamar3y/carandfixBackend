@@ -26,6 +26,14 @@ Route::get('/ar/delete-account-info', function () {
     return view('delete-account-info-ar');
 });
 
+Route::get('/support', function () {
+    return view('support');
+});
+
+Route::get('/ar/support', function () {
+    return view('support-ar');
+});
+
 Route::get('/locale/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'ar'])) {
         session(['locale' => $locale]);
