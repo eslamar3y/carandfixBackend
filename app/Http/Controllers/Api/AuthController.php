@@ -29,7 +29,7 @@ class AuthController extends Controller
                 'password' => 'required|string|min:8|confirmed',
                 'phone' => 'required|string|max:20',
                 'fcm_token' => 'nullable|string',
-                'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
                 'locale' => 'nullable|string|in:en,ar',
             ]);
         } catch (ValidationException $e) {

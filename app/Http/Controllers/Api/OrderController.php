@@ -33,6 +33,7 @@ class OrderController extends Controller
             'type' => 'nullable|string',
             'itemId' => 'nullable|string',
             'price' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:10240',
         ]);
 
         $imagePath = null;
