@@ -46,8 +46,8 @@
 
               <h4 class="fw-bold mt-5 mb-3">Contact Us</h4>
               <p class="fw-medium mb-2"><strong>Email:</strong> <a href="mailto:info@clickandfixqa.com">info@clickandfixqa.com</a></p>
-              <p class="fw-medium mb-2"><strong>Phone / WhatsApp:</strong> <a href="tel:+97477000451">+974 7700 0451</a></p>
-              <p class="fw-medium mb-2"><strong>Address:</strong> Aldoha – Area 26 – Str 940 – Najma – Office 201, Doha, Qatar</p>
+              <p class="fw-medium mb-2"><strong>Phone / WhatsApp:</strong> <a href="tel:+97431261045">+974 3126 1045</a></p>
+              <p class="fw-medium mb-2"><strong>Address:</strong> Aldoha - Zone 15 - Building 102 - P.O.Box : 25666</p>
 
               <div class="bg-light p-4 rounded-3 my-5 text-center">
                 <p class="fw-medium mb-0">To contact us, send an email or message us on WhatsApp and our team will respond as soon as possible.</p>
@@ -114,7 +114,7 @@
               </div>
               <h4 class="fw-medium font-sans-serif text-secondary mb-3">Discover our app</h4>
               <div class="d-flex align-items-center"> 
-                <a href="https://play.google.com/store/apps/details?id=com.emperorsoft.click_and_fix"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.clickandfix.qa"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
                 <a href="https://apps.apple.com/jo/app/click-and-fix/id1603972575"> <img src="{{ asset('assets/img/apple-store.png') }}" alt="apple store" /></a>
               </div>
             </div>
@@ -123,7 +123,7 @@
       </section>
 
       <div class="py-5 text-center">
-        <p class="mb-0 text-secondary fs--1 fw-medium">All rights <span><a href="https://emperorsoft.org/"> Emperor Soft</a> </span></p>
+        <p class="mb-0 text-secondary fs--1 fw-medium">All rights <span> Click and fix </span></p>
       </div>
     </main>
 

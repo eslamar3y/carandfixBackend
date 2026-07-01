@@ -165,6 +165,27 @@ class InvoiceResource extends Resource
             ->defaultSort('created_at', 'desc');
     }
 
+private static function shapeArabicMixed(string $text): string
+{
+    $tokens = preg_split('/([\x{0600}-\x{06FF}]+|[0-9]+)/u', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
+    $tokens = array_filter($tokens, fn($t) => $t !== '');
+    $tokens = array_reverse($tokens); // قلب ترتيب الأجزاء كله - ضروري للـ PDF فقط
+
+    require_once base_path('vendor/ar-php/ar-php/I18N/Arabic/Glyphs.php');
+    $glyphs = new \I18N_Arabic_Glyphs();
+
+    $result = '';
+    foreach ($tokens as $token) {
+        if (preg_match('/^[\x{0600}-\x{06FF}]+$/u', $token)) {
+            $result .= $glyphs->utf8Glyphs($token, true); // شكّل + اعكس الحروف الداخلية فقط
+        } else {
+            $result .= $token; // أرقام/رموز/مسافات - سيبها زي ما هي، من غير أي reverse أو شيبينج
+        }
+    }
+
+    return $result;
+}
+
     public static function getPages(): array
     {
         return ['index' => ManageInvoices::route('/')];
@@ -231,13 +252,14 @@ class InvoiceResource extends Resource
         $customerName = $get('customer_name') ?? '-';
         $paymentMethod = $get('payment_method') ?? 'CASH';
 
-        $s = $forPdf ? fn($t) => static::shapeArabic($t) : fn($t) => $t;
+        // $s = $forPdf ? fn($t) => static::shapeArabic($t) : fn($t) => $t;
+        $s = $forPdf ? fn($t) => static::shapeArabicMixed($t) : fn($t) => $t;
         $dir = $forPdf ? 'ltr' : 'rtl';
         $footerStyle = $forPdf ? 'position:fixed;bottom:0;left:0;right:0;width:100%' : 'width:100%;margin-top:30px';
 
-        $arAddress = $s('الدوحة - المنطقة 26');
-        $arStreet = $s('شارع 940 - النجمة');
-        $arOffice = $s('مكتب 201');
+        $arAddress = $s('الدوحة - قطر');
+        $arStreet = $s('منطقة 15 - بناية 102');
+        $arOffice = $s('ص.ب : 25666');
         $arInvoiceNo = $s('رقم الفاتورة');
         $arDate = $s('تاريخ');
         $arPaymentMethod = $s('طريقة الدفع');
@@ -251,9 +273,9 @@ class InvoiceResource extends Resource
         $arNet = $s('الصافي');
 
         if ($forPdf) {
-            $contactPhone = '+97477000451';
+            $contactPhone = '+97431261045';
         } else {
-            $contactPhone = '+97477000451';
+            $contactPhone = '+97431261045';
         }
 
         $items = $get('items') ?? [];
@@ -322,10 +344,10 @@ class InvoiceResource extends Resource
         <table class="header-table" style="width:100%;margin-bottom:8px;direction:ltr">
             <tr>
                 <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
-                    +97477000451<br>
-                    AlDoha - Area 26<br>
-                    Str 940 - Najma<br>
-                    Office 201<br>
+                    +97431261045<br>
+                    Doha - Qatar<br>
+                    Zone 15, Building 102<br>
+                    P.O. Box: 25666<br>
                     Info@clickandfixqa.com
                 </td><td class="center" style="width:40%;direction:ltr">'
                     . ($logo ? '<img src="' . $logo . '" style="max-height:100px;width:auto;display:block;margin:0 auto;" alt="Logo"><br>' : '')

@@ -93,7 +93,7 @@
               </div>
               <h4 class="fw-medium font-sans-serif text-secondary mb-3">Discover our app</h4>
               <div class="d-flex align-items-center"> 
-                <a href="https://play.google.com/store/apps/details?id=com.emperorsoft.click_and_fix"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.clickandfix.qa"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
                 <a href="https://apps.apple.com/jo/app/click-and-fix/id1603972575"> <img src="{{ asset('assets/img/apple-store.png') }}" alt="apple store" /></a>
               </div>
             </div>
@@ -102,7 +102,7 @@
       </section>
 
       <div class="py-5 text-center">
-        <p class="mb-0 text-secondary fs--1 fw-medium">All rights <span><a href="https://emperorsoft.org/"> Emperor Soft</a> </span></p>
+        <p class="mb-0 text-secondary fs--1 fw-medium">All rights <span> Click and fix </span></p>
       </div>
     </main>
 

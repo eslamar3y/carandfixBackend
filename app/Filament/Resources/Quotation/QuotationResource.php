@@ -229,6 +229,26 @@ class QuotationResource extends Resource
         $glyphs = new \I18N_Arabic_Glyphs();
         return $glyphs->utf8Glyphs($text);
     }
+    private static function shapeArabicMixed(string $text): string
+{
+    $tokens = preg_split('/([\x{0600}-\x{06FF}]+|[0-9]+)/u', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
+    $tokens = array_filter($tokens, fn($t) => $t !== '');
+    $tokens = array_reverse($tokens); // قلب ترتيب الأجزاء كله - ضروري للـ PDF فقط
+
+    require_once base_path('vendor/ar-php/ar-php/I18N/Arabic/Glyphs.php');
+    $glyphs = new \I18N_Arabic_Glyphs();
+
+    $result = '';
+    foreach ($tokens as $token) {
+        if (preg_match('/^[\x{0600}-\x{06FF}]+$/u', $token)) {
+            $result .= $glyphs->utf8Glyphs($token, true); // شكّل + اعكس الحروف الداخلية فقط
+        } else {
+            $result .= $token; // أرقام/رموز/مسافات - سيبها زي ما هي، من غير أي reverse أو شيبينج
+        }
+    }
+
+    return $result;
+}
 
     public static function renderQuotationHtml($get, bool $forPdf = false): string
     {
@@ -248,14 +268,15 @@ class QuotationResource extends Resource
         $terms = $get('terms') ?? '';
         $footerNote = $get('footer_note') ?? '';
 
-        $s = $forPdf ? fn($t) => static::shapeArabic($t) : fn($t) => $t;
+        // $s = $forPdf ? fn($t) => static::shapeArabic($t) : fn($t) => $t;
+        $s = $forPdf ? fn($t) => static::shapeArabicMixed($t) : fn($t) => $t;
 
         $dir = $forPdf ? 'ltr' : 'rtl';
         $footerStyle = $forPdf ? 'position:fixed;bottom:0;left:0;right:0;width:100%' : 'width:100%;margin-top:30px';
 
-        $arAddress = $s('الدوحة - المنطقة 26');
-        $arStreet = $s('شارع 940 - النجمة');
-        $arOffice = $s('مكتب 201');
+        $arAddress = $s('الدوحة - قطر');
+        $arStreet = $s('منطقة 15 - بناية 102');
+        $arOffice = $s('ص.ب : 25666');
         $arCustomer = $s('اسم العميل');
         $arRefNo = $s('الرقم المرجعي');
         $arDate = $s('تاريخ');
@@ -275,10 +296,10 @@ class QuotationResource extends Resource
         $arTotal = $s('الإجمالي');
 
         if ($forPdf) {
-            $contactPhone = '+97477000451';
+            $contactPhone = '+97431261045';
             $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice;
         } else {
-            $contactPhone = '+97477000451';
+            $contactPhone = '+97431261045';
             $headingRight = $contactPhone . '<br>' . $arAddress . '<br>' . $arStreet . '<br>' . $arOffice;
         }
 
@@ -331,10 +352,10 @@ class QuotationResource extends Resource
         <table class="header-table" style="width:100%;margin-bottom:8px;direction:ltr">
             <tr>
                 <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
-                    +97477000451<br>
-                    AlDoha - Area 26<br>
-                    Str 940 - Najma<br>
-                    Office 201<br>
+                    +97431261045<br>
+                    Doha - Qatar<br>
+                    Zone 15, Building 102<br>
+                    P.O. Box: 25666<br>
                     Info@clickandfixqa.com
                 </td>
                 <td class="center" style="width:40%;direction:ltr">'
@@ -439,7 +460,7 @@ class QuotationResource extends Resource
         <table style="width:100%;margin:0 auto;padding:4px 10px">
             <tr>
                 <td style="width:75%;vertical-align:top;font-size:11px;text-align:left;padding:2px;direction:ltr">
-                    <span style="font-size:11px">' . e($footerNote ?: 'Hope our rates are acceptable to you and awaiting your valued order. Please feel to contact us on +97477000451 for any information of your interest.') . '</span>
+                    <span style="font-size:11px">' . e($footerNote ?: 'Hope our rates are acceptable to you and awaiting your valued order. Please feel to contact us on +97431261045 for any information of your interest.') . '</span>
                 </td>
                 <td style="width:25%;vertical-align:top;text-align:right;font-size:11px;padding:2px">
                     ' . (static::getStampBase64()
@@ -465,10 +486,10 @@ expedited for 48 hours from the date of order.';
         <table class="header-table" style="width:100%;margin-bottom:12px;direction:ltr">
             <tr>
                 <td class="contact-left" style="width:30%;font-size:14px;font-weight:bold">
-                    +97477000451<br>
-                    AlDoha - Area 26<br>
-                    Str 940 - Najma<br>
-                    Office 201<br>
+                    +97431261045<br>
+                    Doha - Qatar<br>
+                    Zone 15, Building 102<br>
+                    P.O. Box: 25666<br>
                     Info@clickandfixqa.com
                 </td>
                 <td class="center" style="width:40%;direction:ltr">'

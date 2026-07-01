@@ -152,7 +152,7 @@
                 <div class="bg-primary me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="{{ asset('assets/img/steps/phone.svg') }}" width="22" alt="steps" /></div>
                 <div class="flex-1" dir="rtl" style="text-align: start; padding-right: 20px;">
                   <h5 class="text-secondary fw-bold fs-0" dir="rtl" style="text-align: start;"> رقم الهاتف </h5>
-                  <p dir="rtl" style="text-align: start"> 97477000451+ </p>
+                  <p dir="rtl" style="text-align: start"> 97431261045+ </p>
                 </div>
               </div>
               <div class="d-flex align-items-start mb-5" dir="rtl" style="text-align: start">
@@ -166,7 +166,7 @@
                 <div class="bg-info me-sm-4 me-3 p-3" style="border-radius: 13px"> <img src="{{ asset('assets/img/steps/location.svg') }}" width="22" alt="steps" /></div>
                 <div class="flex-1" dir="rtl" style="text-align: start; padding-right: 20px;">
                   <h5 class="text-secondary fw-bold fs-0" dir="rtl" style="text-align: start;"> العنوان </h5>
-                  <p dir="rtl" style="text-align: start"> الدوحة - منطقة  26 -شارع 940 - النجمة - مكتب 201  </p>
+                  <p dir="rtl" style="text-align: start"> الدوحة - منطقة 15 - بناية 102 - ص.ب : 25666 </p>
                 </div>
               </div>
             </div>
@@ -178,7 +178,7 @@
                     <h5 class="fw-medium">Click And Fix</h5>
                     <div class="icon-group mb-4"> 
                       <span class="btn icon-item"> 
-                        <a href="tel:+97477000451">
+                        <a href="tel:+97431261045">
                           <img src="{{ asset('assets/img/steps/phone-black.svg') }}" alt="Click And Fix Phone"/>
                         </a> 
                       </span>
@@ -237,7 +237,7 @@
               </div>
               <h4 class="fw-medium font-sans-serif text-secondary mb-3">حمل التطبيق الان</h4>
               <div class="d-flex align-items-center"> 
-                <a href="https://play.google.com/store/apps/details?id=com.emperorsoft.click_and_fix"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.clickandfix.qa"> <img class="me-2" src="{{ asset('assets/img/play-store.png') }}" alt="play store" /></a>
                 <a href="https://apps.apple.com/jo/app/click-and-fix/id1603972575"> <img src="{{ asset('assets/img/apple-store.png') }}" alt="apple store" /></a>
               </div>
             </div>
@@ -247,7 +247,7 @@
       </section>
 
       <div class="py-5 text-center">
-        <p class="mb-0 text-secondary fs--1 fw-medium">جميع الحقوق محفوظه  <span><a href="https://emperorsoft.org/"> Emperor Soft</a> </span></p>
+        <p class="mb-0 text-secondary fs--1 fw-medium">جميع الحقوق محفوظه  <span> Click and fix </span></p>
       </div>
     </main>
 
